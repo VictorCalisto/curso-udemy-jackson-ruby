@@ -2,7 +2,7 @@ class Forca
     NIVEL_MAXIMO=5
     NIVEL_MINIMO=1
     attr_reader :palavra, :dica, :letras
-    attr_accessor :posicoes
+    attr_accessor :posicoes, :chute
     def initialize()
         puts "Bem vindo ao jogo da forca!"
         puts "Escolha um nivel de 1 a 5 de dificuldade."
@@ -15,12 +15,20 @@ class Forca
         begin
             seta_posicoes()
             puts @posicoes.join
-            ler_palavra()
-
+            puts "Chute uma letra ou toda a palavra:"
+            chute = ler_palavra()
+            testa_chute(chute)
         end while(@vidas>0 and chute!=@palavra)
         
     end
     private
+    def testa_chute(chute)
+        if chute.length==1
+            
+        elsif chute==@palavra
+        else
+        end
+    end
     def seta_posicoes()
         posicoes
         @palavra.each do |letra|
